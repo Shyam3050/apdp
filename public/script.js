@@ -9,7 +9,7 @@ function fetchData() {
 
   const universityName = urlParams.get("university");
   return fetch(
-    `http://127.0.0.1:3000/api/v1/university/getlocaldata?university=${universityName}`
+    `http://apdegreepapers.in/api/v1/university/getlocaldata?university=${universityName}`
   )
     .then((response) => {
       if (!response.ok) {
