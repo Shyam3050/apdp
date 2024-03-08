@@ -1,0 +1,134 @@
+main {
+  margin: 0.5rem;
+}
+.main_con {
+  padding: 0.5rem;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-block: 0.5rem;
+}
+h4 {
+  font-size: 1.1rem;
+  margin-block: 0.5rem;
+}
+.upload-by {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+.upload-by span {
+  color: var(--primary-color);
+}
+
+.upload-description {
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.youmaylike,
+.related_cont {
+  border: 1px solid var(--primary-color);
+  color: var(--text-secondary);
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+  margin-block: 1rem;
+}
+.youmaylike p,
+.related_cont p {
+  font-size: 1.2rem;
+  color: red;
+}
+.youmaylike a,
+.related_cont a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-block: 0.5rem;
+  font-size: 1.1rem;
+}
+.youmaylike a:hover,
+.related_cont a:hover {
+  color: var(--primary-color);
+}
+
+.table_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.iftable {
+  margin-top: 1rem;
+  border-collapse: collapse;
+  text-align: center;
+  width: 60%;
+}
+.iftable th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--primary-color);
+  color: white;
+}
+.iftable th,
+.iftable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.iftable td p {
+  margin-top: 0.75rem;
+}
+.iftable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.iftable tr:hover {
+  background-color: #ddd;
+}
+@media only screen and (max-width: 700px) {
+  .iftable {
+    width: 100%;
+  }
+}
+
+.paper_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.paper_links a {
+  margin-block: 0.75rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.paper_links a:hover {
+  color: black;
+}
+#body_cont {
+  display: flex;
+  gap: 1rem;
+  width: 90vw;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 700px) {
+  #body_cont {
+    display: block;
+    width: 95vw;
+  }
+}
+
+.link_des {
+  margin-top: 2rem;
+}
+.data_not_found {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: red;
+}

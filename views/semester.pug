@@ -1,0 +1,124 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(content=`${universityData.name} (${universityData.shortForm})  ${semName} degree previous year question papers for all universities under Andhra Pradesh. It has a BSc. BCom, BSc, BA etc. Papers like physics, computer, commerce, chemistry etc` property='og:description')
+  meta(content=`${universityData.name} (${universityData.shortForm})  ${semName} apdegreepapers provides degree previous year question papers for all universities under Andhra Pradesh. It has a BSc. BCom, BSc, BA etc. Papers like physics, computer, commerce, chemistry etc` name='description')
+  link(rel='stylesheet' href='/style.css')
+  title= `${universityData.name} ${semName} degree previous year exam papers.`
+  link(rel='icon' href='/assets/logos/favicon/android-chrome-192x192.png' type='image/x-icon')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='/sempaper.css')
+  script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-NVFPYBKXK6')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NVFPYBKXK6');  
+nav.navbar
+  .logo
+    span
+      a(href='/') Ap Degree papers
+  ul.nav-links
+    li
+      a(href='contact.html') contact
+section#body_cont
+  main
+    #top_notice
+      marquee(behavior='' direction='' scrollamount='6')
+        a(href='https://t.me/apdegreepapers') Join our Telegram channel and Discuss group.
+      marquee#cont(scrollamount='7')
+        | For latest papers updates subscribe our channel apdegreepapers on
+        | youtube link scrolls below.
+      marquee(behavior='' direction='' scrollamount='6')
+        a(href='https://www.youtube.com/@apdegreepapers') Visit the youtube channel apdegreepapers
+    section.main_con
+      h1= `${universityData.shortForm} Degree ${semName} Previous Year Papers List.`
+      h2(style='text-align: center; margin-top: 0.5rem')
+        | #{universityData.name} #{semName} old papers.
+
+      p.upload-by
+        | By 
+        span Shyam
+      p.upload-description= `${universityData.name} Degree ${semName} Previous Year Question Papers are collected. The links to ${universityData.shortForm} ${semName} old Question Papers are below. Click the links to Navigate to the Model Papers you want.`
+      .youmaylike
+        p You may like:
+        a(href=`sem?university=${universityData.shortForm}&sem=3` target='_blank')=`You may like ${universityData.shortForm} 3rd sem papers`
+        a(href=`sem?university=${universityData.shortForm}&sem=4` target='_blank')= `You may like ${universityData.shortForm} 4th sem papers`
+      section#table_section.table_section
+        h2=`${universityData.shortForm} degree ${semName}  previous questions papers Links`
+        if data && data.length > 0
+          table.iftable
+            tr
+              th Paper Names
+              th Year of paper
+            each paper in data
+              tr 
+                td
+                  span(style='font-weight: bold; text-transform: uppercase')= `${paper.subjectName} : `
+                  |    #{paper.paperName} 
+                td
+                  each year in paper.years
+                    p  
+                      a(href=`/paper?universityId=${year.paperData.universityId._id}&yearId=${year.yearName}&semesterId=${semName}&subjectId=${year.paperData.subjectName}&paperId=${year.paperData._id}` target='_blank')= `${year.yearName}`
+        else 
+          p.data_not_found No Data Found. We will update soon.      
+
+    section.link_des
+      h3= `Available Question papers for ${universityData.name} Degree ${semName} papers listed below.`
+      h4 Almost all group questions papers are available.
+      .paper_links
+        if data && data.length > 0
+          each paper in data
+            each year in paper.years
+              a(href=`/paper?universityId=${year.paperData.universityId._id}&yearId=${year.yearName}&semesterId=${semName}&subjectId=${year.paperData.subjectName}&paperId=${year.paperData._id}` target='_blank')=`${paper.paperName} ${year.yearName} exam paper.`
+        else
+          p.data_not_found No Data Found. We will update soon.      
+    section#social_media
+      div
+        a(href='https://whatsapp.com/channel/0029VaJ0md0Gk1FjpcCd5o1y')    
+          i.fa-brands.fa-whatsapp(style='color: #63e6be')
+        a(href='https://www.youtube.com/@apdegreepapers')
+          i.fa-brands.fa-youtube(style='color: #e61e1e')
+        a(href='https://t.me/apdegreepapers')
+          i.fa-brands.fa-telegram(style='color: #74c0fc')
+
+    section.tags
+      p Tags:
+      .tags_cont
+        a(href='university?university=BRAU' target='_blank') Dr br ambedkar university
+
+  aside
+    section
+      .label_cont
+        .label_title Labels
+        .aside_labels
+          a(href=`/university?university=${universityData.shortForm}` target='_blank')= `${universityData.shortForm} university`
+          a(href=`sem?university=${universityData.shortForm}&sem=1` target='_blank')= `${universityData.shortForm} degree 1sem`
+          a(href=`sem?university=${universityData.shortForm}&sem=2` target='_blank')= `${universityData.shortForm} degree 2sem`
+          a(href=`sem?university=${universityData.shortForm}&sem=3` target='_blank')= `${universityData.shortForm} degree 3sem`
+          a(href=`sem?university=${universityData.shortForm}&sem=4` target='_blank')= `${universityData.shortForm} degree 4sem`
+          a(href=`sem?university=${universityData.shortForm}&sem=5` target='_blank')= `${universityData.shortForm} degree 5sem`
+          a(href=`sem?university=${universityData.shortForm}&sem=6` target='_blank')= `${universityData.shortForm} degree 6sem`
+          a(href=`/university?university=${universityData.shortForm}`) Previous questions paper
+      .label_cont
+        .label_title Popular posts
+        .popular_post_cont
+          .pop_post
+            h3
+              | Dr. B.R Ambedkar University | BRAU Previous Question Papers
+              | Added
+            p
+              a(href='/university?university=BRAU')
+                | Ambedkar University (BRAU) was established in the year 2008
+                | in Srikakulam. It was a State Universi&mldr;
+footer
+  ul.footer_upper
+    li
+      a(href='contact.html') Contct us
+    li
+      a(href='aboutus.html') About us
+    li
+      a(href='privacy.html') Privacy policy
+  div
+    | @apdegreepapers

@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='style.css')
+  title AP DERGREE PAPERS UNIVERSITY 
+  link(rel='icon' href='/assets/logos/favicon/android-chrome-192x192.png' type='image/x-icon')
+  link(rel='stylesheet' href='university.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-NVFPYBKXK6')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NVFPYBKXK6');  
+#wrapper.loading_hidden
+  #loader
+  p Loading...
+nav.navbar
+  .logo
+    span
+      a(href="/") Ap Degree papers
+  ul.nav-links
+    li
+      a(href='/contact.html') contact
+header
+  // hero image
+  .hero_banner
+    img(src=`/assets/university/${data.imageURL}` alt=data.name)
+    .hero_text
+      h1= data.name
+      p= data.description
+section#_university
+  h2 Select University:
+  select#select_university(name='')
+    option(value="") -----select university----- 
+    option(value='https://apdegreepapers.in/university?university=BRAU' selected=(data.shortForm === "BRAU"))
+      | DR br ambedkar university (srikakulam)
+    option(value='https://apdegreepapers.in/university?university=AU' selected=(data.shortForm === "AU")) Andhra university
+   
+main#main
+  section#year.year
+    h2 Select The Year:
+    .year_container
+ 
+button#scroll_to_top(type='button' onclick='scrollToTop()')
+  i.fa-solid.fa-arrow-up(style='color: #ffffff')
+footer
+  ul.footer_upper
+    li
+      a(href='contact.html') Contct us
+    li
+      a(href='aboutus.html') About us
+    li
+      a(href='privacy.html') Privacy policy
+  div
+    | @apdegreepapers
+script(src='./script.js')
