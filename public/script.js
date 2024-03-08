@@ -9,7 +9,7 @@ function fetchData() {
 
   const universityName = urlParams.get("university");
   return fetch(
-    `http://apdegreepapers.in/api/v1/university/getlocaldata?university=${universityName}`
+    `https://apdegreepapers.in/api/v1/university/getlocaldata?university=${universityName}`
   )
     .then((response) => {
       if (!response.ok) {
